@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Screen Size Tracker</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            background-color: #222;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+        }
+
+        #screenSize {
+            line-height: 1.5rem;
+            margin: 0;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Screen Size Tracker</h1>
+        <p id="screenSize">Checking screen size...</p>
+    </div>
+
+    <script>
+        const screenSizeText = document.getElementById('screenSize');
+
+        function updateScreenSize() {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+
+            function calculateDiagonal(x, y) {
+                return Math.sqrt(x * x + y * y);
+            }
+
+            // Example usage:
+            let diagonal = calculateDiagonal(height, width);
+
+            screenSizeText.innerHTML = `Width: ${width}px | Height: ${height}px </br> Width: ${width * 0.026}cm | Height: ${height * 0.026}cm </br> Width: ${width * 0.010}in | Height: ${height * 0.010}in </br> ${width > 800 ? 'Wide Screen' : 'Narrow Screen'}`;
+        }
+
+        // Initial update
+        updateScreenSize();
+
+        // Update on resize
+        window.addEventListener('resize', updateScreenSize);
+
+    </script>
+</body>
+
+</html>
