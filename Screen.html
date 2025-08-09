@@ -53,7 +53,7 @@
             // Example usage:
             let diagonal = calculateDiagonal(height, width);
 
-            screenSizeText.innerHTML = `Width: ${width}px | Height: ${height}px </br> Width: ${width * 0.026}cm | Height: ${height * 0.026}cm </br> Width: ${width * 0.010}in | Height: ${height * 0.010}in </br> ${width > 800 ? 'Wide Screen' : 'Narrow Screen'}`;
+            screenSizeText.innerHTML = `Width: ${width}px | Height: ${height}px </br> Width: ${width * 0.026}cm | Height: ${height * 0.026}cm </br> Width: ${width * 0.010}in | Height: ${height * 0.010}in Diagonal:${diagonal * 0.010} </br> ${width > 800 ? 'Wide Screen' : 'Narrow Screen'}`;
         }
 
         // Initial update
